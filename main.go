@@ -30,6 +30,11 @@ func main() {
 	var version string
 	fmt.Scanln(&version)
 
+	if version == "" {
+		fmt.Fprintln(os.Stdout, "1.0.0")
+		return
+	}
+
 	var bumpedVersion strings.Builder
 	if version[0] == 'v' {
 		bumpedVersion.WriteString("v")
